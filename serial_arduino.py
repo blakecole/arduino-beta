@@ -28,7 +28,7 @@ if __name__ == '__main__':
             payload = s.readline().decode('utf-8').rstrip()
             current_time = time.strftime("%Y-%m-%d %H:%M:%S")
             line = "TIME=" + current_time + "," + payload
-            logfile = open(fname, "a")
-            logfile.write(line)
-            logfile.close()
             print(line)
+            logfile = open(fname, "a")
+            logfile.write(line + "\n")
+            logfile.close()
