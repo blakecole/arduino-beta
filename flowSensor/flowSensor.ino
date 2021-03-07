@@ -51,7 +51,7 @@ void loop() {
     // Print total integrated volume [L]
     Serial.print("TOTAL_VOL=");
     Serial.print(totalVol);
-    Serial.print(",\n");
+    Serial.print("\n");
   }
 }
 
