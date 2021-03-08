@@ -10,7 +10,7 @@ const byte flowPin = 2;    // flow rate sensor pin
 
 // define constants:
 const float conversionFactor   = 6.54;   // [PULSE] per [LPM]
-const unsigned long loopDelay  = 1000;   // loop delay [ms]
+const unsigned long loopDelay  = 500;   // loop delay [ms]
 
 // define flow vars:
 float flowRate           = 0.0;    // [L/min]
@@ -34,7 +34,7 @@ void setup() {
 void loop() {
   interval = millis()-prevTime;
   
-  if(interval >= loopDelay) {
+  if((interval >= loopDelay) && (vPulseCount > 0)){
     pulseCount = vPulseCount; // grab ISR pulse count
     vPulseCount = 0;          // reset ISR pulse count
 
